@@ -66,6 +66,7 @@ public class SceneManager {
 
     public <T extends Scene> void removeScene(T scene) throws Exception {
         if (!scenes.contains(scene)) return;
+        scene.clear();
         scenes.remove(scene);
     }
 }
