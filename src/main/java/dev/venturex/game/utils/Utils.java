@@ -1,4 +1,4 @@
-package dev.venturex.game;
+package dev.venturex.game.utils;
 
 import java.io.IOException;
 import java.nio.file.Files;
