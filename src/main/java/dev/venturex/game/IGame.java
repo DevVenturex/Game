@@ -55,8 +55,8 @@ public abstract class IGame {
 
         window = new Window(640, 480, "Hello, world!", true);
         timer.init();
-        renderer.init();
         sceneManager.init(new DefaultScene());
+        renderer.init();
         running = true;
     }
 

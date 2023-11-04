@@ -1,6 +1,7 @@
 package dev.venturex.game.scenes;
 
 import dev.venturex.game.Game;
+import dev.venturex.game.gameobjects.GameObject;
 import dev.venturex.game.input.Inputs;
 
 import java.lang.management.ManagementFactory;
@@ -19,7 +20,7 @@ public class SceneManager {
         this.scenes = new ArrayList<>();
     }
 
-    public void init(Scene mainScene) {
+    public void init(Scene mainScene) throws Exception {
         currentScene = mainScene;
         currentScene.init();
     }

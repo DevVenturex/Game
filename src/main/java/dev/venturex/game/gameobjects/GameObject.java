@@ -13,6 +13,7 @@ public abstract class GameObject {
     }
     public void init(String name) {
         this.name = name;
+        this.transform = new Transform();
     }
     public void update() {}
     public void clear() {}

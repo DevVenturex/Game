@@ -7,6 +7,7 @@ import dev.venturex.game.gameobjects.Sprite;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,8 +41,8 @@ public class RenderBatch {
     private int maxBatchSize;
     private Shader shader;
 
-    public RenderBatch(int maxBatchSize) {
-        this.shader = new Shader("/home/basti/Documents/Projects/Dev/Java/Game/src/main/resources/shaders/default.glsl");
+    public RenderBatch(int maxBatchSize) throws Exception {
+        this.shader = new Shader();
         this.sprites = new Sprite[maxBatchSize];
         this.maxBatchSize = maxBatchSize;
 
@@ -107,7 +108,7 @@ public class RenderBatch {
         glBindBuffer(GL_ARRAY_BUFFER, vboID);
         glBufferSubData(GL_ARRAY_BUFFER, 0, vertices);
 
-        Camera cam = (Camera) Game.sceneManager.getCurrentScene().getGameObject("Camera");
+        Camera cam = (Camera) Game.sceneManager.getCurrentScene().getCamera();
 
         // Use shader
         shader.use();

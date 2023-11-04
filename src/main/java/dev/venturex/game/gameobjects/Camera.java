@@ -1,5 +1,6 @@
 package dev.venturex.game.gameobjects;
 
+import dev.venturex.game.components.Transform;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
@@ -9,6 +10,7 @@ public class Camera extends GameObject {
     private Matrix4f projectionMatrix, viewMatrix;
 
     public Camera() {
+        transform = new Transform();
         this.projectionMatrix = new Matrix4f();
         this.viewMatrix = new Matrix4f();
         adjustProjection();

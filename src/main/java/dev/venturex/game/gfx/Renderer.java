@@ -5,18 +5,18 @@ import dev.venturex.game.gameobjects.GameObject;
 import dev.venturex.game.gameobjects.Sprite;
 import dev.venturex.game.scenes.Scene;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Renderer {
     private final int MAX_BATCH_SIZE = 1024;
-    private List<RenderBatch> batches;
+    private List<RenderBatch> batches = new ArrayList<>();
 
     public void dispose() {
     }
 
-    public void add(Sprite sprite) {
+    public void add(Sprite sprite) throws Exception {
         boolean added = false;
-        if (batches == null) batches.add(new RenderBatch(MAX_BATCH_SIZE));
         for (RenderBatch batch : batches) {
             if (batch.hasRoom()) {
                 batch.addSprite(sprite);
