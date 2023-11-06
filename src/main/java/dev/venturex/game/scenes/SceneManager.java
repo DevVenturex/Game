@@ -1,15 +1,7 @@
 package dev.venturex.game.scenes;
 
-import dev.venturex.game.Game;
-import dev.venturex.game.gameobjects.GameObject;
-import dev.venturex.game.input.Inputs;
-
-import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_1;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_2;
 
 public class SceneManager {
 
@@ -20,7 +12,7 @@ public class SceneManager {
         this.scenes = new ArrayList<>();
     }
 
-    public void init(Scene mainScene) throws Exception {
+    public void init(Scene mainScene) {
         currentScene = mainScene;
         currentScene.init();
     }
@@ -46,7 +38,7 @@ public class SceneManager {
     }
 
     public void render(float alpha) {
-        Game.renderer.render(alpha);
+        currentScene.render(alpha);
     }
 
     public void clear() {

@@ -1,15 +1,14 @@
 package dev.venturex.game.scenes;
 
-import dev.venturex.game.gameobjects.Sprite;
-import org.joml.Vector4f;
+import dev.venturex.game.gfx.Mesh;
 
 public class DefaultScene implements Scene {
 
+    private Mesh mesh;
+
     @Override
-    public void init() throws Exception {
-        Sprite sprite = new Sprite();
-        sprite.setColor(new Vector4f(1,0,0,1));
-        addGameObject(sprite);
+    public void init()  {
+        mesh = new Mesh();
     }
 
     @Override
@@ -19,7 +18,7 @@ public class DefaultScene implements Scene {
 
     @Override
     public void render(float alpha) {
-
+        mesh.render();
     }
 
     @Override
@@ -29,6 +28,6 @@ public class DefaultScene implements Scene {
 
     @Override
     public void clear() {
-
+        mesh.clear();
     }
 }

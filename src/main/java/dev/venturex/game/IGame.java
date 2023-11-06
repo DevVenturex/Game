@@ -1,7 +1,5 @@
 package dev.venturex.game;
 
-
-import dev.venturex.game.gfx.Renderer;
 import dev.venturex.game.scenes.DefaultScene;
 import dev.venturex.game.scenes.SceneManager;
 import dev.venturex.game.utils.Timer;
@@ -21,14 +19,13 @@ public abstract class IGame {
     private GLFWErrorCallback errorCallback;
     protected boolean running;
     protected Timer timer;
-    public static Renderer renderer;
     public static SceneManager sceneManager;
     protected Window window;
 
 
     public IGame() {
         timer = new Timer();
-        renderer = new Renderer();
+        // Creating renderer
         sceneManager = new SceneManager();
     }
 
@@ -39,7 +36,7 @@ public abstract class IGame {
     }
 
     public void dispose() {
-        renderer.dispose();
+        // disposing renderer
         sceneManager.clear();
         window.destroy();
 
@@ -56,7 +53,7 @@ public abstract class IGame {
         window = new Window(640, 480, "Hello, world!", true);
         timer.init();
         sceneManager.init(new DefaultScene());
-        renderer.init();
+        // init renderer
         running = true;
     }
 
